@@ -12,6 +12,7 @@
   --indigo-light: #4A63BE;
   --border: #E0DDD8;
   --section-alt: #F8F6F2;
+  --grey: #656565;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -89,7 +90,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   margin-bottom: 1.2rem;
 }
 .hero-title .t-orange { color: var(--orange); }
-.hero-title .t-black { color: var(--black); }
+.hero-title .t-black { color: var(--grey); }
 .hero-subtitle {
   font-size: clamp(0.75rem, 1.5vw, 0.9rem);
   color: var(--muted); font-weight: 700;
@@ -199,7 +200,7 @@ section { padding: 90px 5%; }
   max-width: 700px; font-weight: 400;
 }
 
-/* ── QUIENES ── */
+/* ── QUIENES ──
 #quienes { background: var(--white); }
 .quienes-grid {
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem;
@@ -223,14 +224,168 @@ section { padding: 90px 5%; }
   letter-spacing: -0.03em;
 }
 .esencia-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--black); }
-.esencia-item p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+.esencia-item p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; } */
+
+
+
+/* ─────────────────────────
+   QUIÉNES SOMOS
+───────────────────────── */
+
+#quienes {
+  padding: 120px 5%;
+  /* background: #f5f5f5; */
+  background: #fff;
+}
+
+.quienes-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+
+/* ── TEXTO IZQUIERDA ── */
+
+.quienes-text p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.quienes-text strong {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── CARD DERECHA ── */
+
+.esencia-list {
+  background: #173b78;
+  border-radius: 18px;
+  padding: 1.5rem 2.5rem;
+  color: white;
+  position: sticky;
+  top: 120px;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* TITULO */
+
+.esencia-header {
+  margin-bottom: 2rem;
+}
+
+.esencia-header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.esencia-header p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ITEMS */
+
+.esencia-item {
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+.esencia-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.esencia-num {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 0.8rem;
+}
+
+.esencia-item h4 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+  color: white;
+}
+
+.esencia-item p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 992px) {
+
+  .quienes-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .esencia-list {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #quienes {
+    padding: 90px 6%;
+  }
+
+  .quienes-text p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .esencia-list {
+    padding: 2rem;
+    border-radius: 16px;
+  }
+
+  .esencia-header h3 {
+    font-size: 1.7rem;
+  }
+
+  .esencia-item h4 {
+    font-size: 1.4rem;
+  }
+
+  .esencia-item p,
+  .esencia-header p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
 
 /* ── ESPECIALIDADES ── */
-#especialidades { background: var(--section-alt); }
+#especialidades { 
+  /* background: var(--section-alt);  */
+    background: #fff;
+}
 .esp-header { margin-bottom: 3.5rem; }
 .esp-grid {
   display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
-  background: var(--border);
+  /* background: var(--border); */
 }
 .esp-card {
   background: var(--white);
@@ -260,8 +415,11 @@ section { padding: 90px 5%; }
   margin-bottom: 1.5rem;
 }
 
+
+
+
 /* ── PRESENCIA ── */
-#presencia { background: var(--white); }
+/* #presencia { background: var(--white); }
 .presencia-grid {
   display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5px;
   background: var(--border); margin-top: 3.5rem;
@@ -275,10 +433,147 @@ section { padding: 90px 5%; }
 .pais-card:hover { background: var(--section-alt); }
 .pais-flag { font-size: 2rem; line-height: 1; }
 .pais-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--black); }
-.pais-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+.pais-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; } */
+
+/* ─────────────────────────
+   PRESENCIA INTERNACIONAL
+───────────────────────── */
+
+#presencia {
+  padding: 120px 5%;
+  /* background: #f5f5f5; */
+  background: #fff;
+}
+
+#presencia .section-lead {
+  max-width: 1050px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ── GRID ── */
+
+.presencia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+}
+
+/* ── CARD ── */
+
+.pais-card {
+  background: #dfe1f2;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 1.3rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.pais-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* ── FLAG ── */
+
+.pais-flag {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #4b52c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ── TEXTOS ── */
+
+.pais-card h4 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #2b2b2b;
+  margin-bottom: 0.8rem;
+}
+
+.pais-card p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #3e3e3e;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 992px) {
+
+  .presencia-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #presencia {
+    padding: 90px 6%;
+  }
+
+  #presencia .section-lead {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .pais-card {
+    padding: 1.2rem;
+  }
+
+  .pais-card h4 {
+    font-size: 1.5rem;
+  }
+
+  .pais-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+.pais-flag {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #4a50c9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.2rem;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    0 4px 10px rgba(74,80,201,0.25);
+}
+
+.pais-flag .fi {
+  font-size: 1.2rem;
+  border-radius: 2px;
+}
+
+
+
 
 /* ── CLIENTES ── */
-#clientes { background: var(--section-alt); overflow: hidden; }
+/* #clientes { background: var(--section-alt); overflow: hidden; }
 .clientes-scroll-wrap {
   overflow: hidden; margin-top: 3rem;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
@@ -299,7 +594,114 @@ section { padding: 90px 5%; }
   white-space: nowrap; flex-shrink: 0;
   transition: background 0.15s, color 0.15s;
 }
-.client-tag:hover { background: var(--orange); color: var(--white); }
+.client-tag:hover { background: var(--orange); color: var(--white); } */
+
+
+/* ─────────────────────────
+   CLIENTES
+───────────────────────── */
+
+#clientes {
+  padding: 120px 5%;
+  /* background: #f5f5f5; */
+  background: #fff;
+}
+
+#clientes .section-lead {
+  max-width: 1100px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+/* ── LOGOS ── */
+
+.clientes-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   gap: 1rem 0.5rem; 
+
+  align-items: center;
+  justify-items: center;
+
+  margin-bottom: 5rem;
+}
+
+.clientes-logos img {
+  max-width: 140px;
+  max-height: 70px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  /* filter: grayscale(100%);
+  opacity: 0.9; */
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+.clientes-logos img:hover {
+  /* filter: grayscale(0%);
+  opacity: 1; */
+  transform: scale(1.05);
+}
+
+/* ── TEXTO FINAL ── */
+
+.clientes-footer {
+  max-width: 1100px;
+
+  font-size: 1.05rem;
+  line-height: 1.9;
+
+  color: #333;
+}
+
+.clientes-footer strong {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 1200px) {
+
+  .clientes-logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  #clientes {
+    padding: 90px 6%;
+  }
+
+  .clientes-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  .clientes-logos img {
+    max-width: 110px;
+    max-height: 55px;
+  }
+
+  .clientes-footer,
+  #clientes .section-lead {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+
 
 /* ── AUTOMATISMOS ── */
 #automatismos {
