@@ -61,6 +61,14 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); transition: 0.3s; }
 
+.nav-logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
@@ -1636,11 +1644,11 @@ section { padding: 90px 5%; }
 /* ── FOOTER ── */
 footer {
   /* background: #0A0A0A;  */
-  padding: 2.5rem 5%;
+  padding: 1.5rem 5%;
   /* border-top: 1px solid rgb(24, 24, 24); */
 }
 .footer-inner {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: space-between; align-items: end;
   flex-wrap: wrap; gap: 1rem; max-width: 1180px; margin: 0 auto;
 }
 .footer-logo { font-size: 0.9rem; font-weight: 900; letter-spacing: 0.04em; }
@@ -1657,6 +1665,10 @@ footer {
   letter-spacing: 0.25em; text-transform: uppercase;
   margin-bottom: 1.8rem;
 }
+.footer-logo img{
+    height: 70px;
+}
+
 
 /* ── ANIMATIONS ── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }

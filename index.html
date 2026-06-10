@@ -9,14 +9,17 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 <link rel="shortcut icon" href="logo-retina.ico" type="image/x-icon">
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">
-    <span class="part-orange">TIME SOLUTI</span><span class="part-on">ON</span><span class="part-orange" style="margin-left: 0.3rem;"> SOFTWARE</span>
-  </a>
+<a href="#hero" class="nav-logo">
+  <img src="img/logotime-removebg-preview.png" alt="Time Solution Software" />
+</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#quienes">Nosotros</a></li>
     <li><a href="#especialidades">Soluciones</a></li>
@@ -1075,7 +1078,7 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
       <span class="t-orange">TIME SOLUTI</span><span class="t-black">ON</span><br><span class="t-orange">SOFTWARE</span>
     </h1>
     <p class="hero-subtitle">IT + Innovation Logistics</p>
-    <p class="footer-subtitle">Transformamos la logística. Conectamos el futuro.</p>
+    <p class="footer-subtitle">Transformamos tu negocio. Conectamos el futuro.</p>
     
     <p class="hero-desc">Más de 20 años construyendo soluciones que mueven el mundo.</p>
   </div>
@@ -1123,6 +1126,15 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
           <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos tu proyecto o consulta..." required></textarea>
         </div>
 
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos tu proyecto o consulta..." required></textarea>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="6LdWo0UlAAAAALht23PTABQMv-j9JZs09ipODDck"></div>
+
+        
         <button type="submit" class="btn-enviar">Enviar mensaje</button>
       </form>
 
@@ -1134,15 +1146,26 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo"><span class="part-orange">TIME SOLUTI</span><span class="part-black">ON</span> <span class="part-orange">SOFTWARE</span></div>
-      <div class="footer-sub">IT + Innovation Logistics · Desde 2003</div>
+      <div class="footer-logo">
+        <a href="#hero" class="nav-logo">
+          <img src="img/logotime-removebg-preview.png" alt="Time Solution Software" />
+        </a>
+      </div>
+
     </div>
     <div class="footer-right">
       <a href="https://www.timesolution.com.ar" target="_blank">www.timesolution.com.ar</a>
-      <div class="footer-copy">© 2024 Time Solution Software. Todos los derechos reservados.</div>
+<div class="footer-copy">© <span id="anio"></span> Time Solution Software. Todos los derechos reservados.</div>
+
+
     </div>
   </div>
 </footer>
+
+
+<script>
+  document.getElementById('anio').textContent = new Date().getFullYear();
+</script>
 
 <script>
 // Nav scroll
