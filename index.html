@@ -23,7 +23,7 @@
     <li><a href="#clientes">Clientes</a></li>
     <li><a href="#automatismos">Automatismos</a></li>
     <li><a href="#reconocimientos">Premios</a></li>
-    <li><a href="#contactos" class="nav-cta">Contacto</a></li>
+    <li><a href="#contactoAncla" class="nav-cta">Contacto</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -588,7 +588,7 @@ toda la instalación
       <div class="automatismos-image reveal reveal-delay-2">
 
         <img
-          src="img/DJI_20250722161154_0206_D-2.jpg"
+          src="img/robotica.jpg"
           alt="Automatización industrial y robótica"
         >
 
@@ -638,7 +638,7 @@ toda la instalación
 
   <div class="ia-image reveal">
     <img
-      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop"
+      src="img/ia.jpg"
       alt="Inteligencia Artificial aplicada a logística"
     >
   </div>
@@ -1066,7 +1066,7 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
 </section>
 
 <!-- CONTACTO -->
- <div id="contactos"></div>
+ <div id="contactoAncla"></div>
 
 <section id="hero">
   <div class="hero-photo-bg"></div>
@@ -1079,6 +1079,55 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
     
     <p class="hero-desc">Más de 20 años construyendo soluciones que mueven el mundo.</p>
   </div>
+
+
+  <!-- CONTACTO FORM -->
+
+    <div class="contacto-inner">
+      <h2 class="contacto-title">
+        <span class="t-orange"></span><span class="t-orange">CONTÁCTANOS</span>
+      </h2>
+      <p class="contacto-desc">¿Tenés un proyecto en mente? Escribinos y te respondemos a la brevedad.</p>
+
+      <form class="contacto-form" action="https://formspree.io/f/xaqzjrqj" method="POST">
+         <input type="hidden" name="_subject" value="Nuevo contacto desde el sitio web" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+54 11 0000-0000" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?" required />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos tu proyecto o consulta..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+      </form>
+
+    </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -1141,5 +1190,9 @@ const countObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 if (counters.length) countObs.observe(counters[0].closest('.hero-stats'));
 </script>
+
+
+
+
 </body>
 </html>
