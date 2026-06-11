@@ -630,7 +630,7 @@ section { padding: 90px 5%; }
 
 .clientes-logos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
    gap: 1rem 0.5rem; 
 
   align-items: center;
