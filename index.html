@@ -1163,8 +1163,8 @@ reflejo del compromiso permanente con la calidad y la innovación.</p>
         </div>
 
 
-        <div class="g-recaptcha" data-sitekey="6LdWo0UlAAAAALht23PTABQMv-j9JZs09ipODDck"></div>
-<span id="captcha-error" style="display:none; color:#e05a00; font-size:0.83rem; margin-top:6px; display:none;">
+<div class="g-recaptcha" data-sitekey="6LdWo0UlAAAAALht23PTABQMv-j9JZs09ipODDck"></div>
+<span id="captcha-error" style="display:none; color:#e05a00; font-size:0.83rem; margin-top:6px;">
   Por favor, completá el captcha antes de enviar.
 </span>
         
@@ -1248,17 +1248,22 @@ if (counters.length) countObs.observe(counters[0].closest('.hero-stats'));
 </script>
 
 <script>
-  document.querySelector('.contacto-form').addEventListener('submit', function(e) {
-    const captcha = grecaptcha.getResponse();
-    if (!captcha) {
-      e.preventDefault();
-      document.getElementById('captcha-error').style.display = 'block';
-    } else {
-      document.getElementById('captcha-error').style.display = 'none';
-    }
+  document.addEventListener('DOMContentLoaded', function() {
+    var forms = document.querySelectorAll('.contacto-form');
+    forms.forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        var captcha = grecaptcha.getResponse();
+        if (!captcha) {
+          e.preventDefault();
+          e.stopPropagation();
+          document.getElementById('captcha-error').style.display = 'block';
+          return false;
+        }
+        document.getElementById('captcha-error').style.display = 'none';
+      });
+    });
   });
 </script>
-
 
 </body>
 </html>
