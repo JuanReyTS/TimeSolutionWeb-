@@ -2377,3 +2377,219 @@ footer {
   position: relative;
   z-index: 2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== EXPANSIÓN CHILE ===== */
+#expansion-chile {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  color: #111;
+}
+
+
+
+.expansion-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  z-index: 1;
+}
+
+.expansion-content {
+  position: relative;
+  z-index: 2;
+}
+
+.expansion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.expansion-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.expansion-lead {
+  /* max-width: 950px; */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 40px 0 32px;
+}
+
+.expansion-card {
+  background: #fff;
+  border-left: 4px solid transparent;
+  border-radius: 6px;
+  padding: 28px 26px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.expansion-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.expansion-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.expansion-card-blue { border-left-color: #2b3a8f; }
+.expansion-card-red  { border-left-color: #d0362f; }
+
+.expansion-footer {
+  /* max-width: 950px; */
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+
+
+
+.expansion-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.0) brightness(1.05); /* antes 1.25 */
+  opacity: 0.8;
+  z-index: 0;
+}
+
+
+.expansion-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -120deg,
+    rgba(255, 255, 255, 0.90) 0%,
+    rgba(255, 255, 255, 0.90) 10%, 
+    rgba(255, 255, 255, 0.55) 75%,
+    rgba(255, 255, 255, 0.32) 100%
+  );
+  z-index: 1;
+}
+
+
+.expansion-lead {
+  /* max-width: 950px; */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #14161a; /* antes #333/#1a1a1a, ahora casi negro */
+  margin-bottom: 18px;
+}
+
+.expansion-footer {
+  /* max-width: 950px; */
+  font-size: 0.95rem;
+  color: #14161a; /* antes #333, mismo tono oscuro */
+  line-height: 1.7;
+  font-weight: 500; /* un poco más de peso para que resalte sobre la zona con más color */
+}
+
+.expansion-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #2a2a2a; /* antes #444, más oscuro */
+  margin: 0;
+}
+
+
+/* Oculto por default (solo aparece en mobile) */
+.expansion-flag-mobile {
+  display: none;
+}
+
+
+
+
+/* Responsive */
+
+
+
+/* ===== TABLET (≤900px) ===== */
+@media (max-width: 900px) {
+  .expansion-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ===== MOBILE (≤600px) ===== */
+@media (max-width: 600px) {
+  #expansion-chile {
+    padding: 50px 6%;
+  }
+
+  /* Quitamos el fondo con la foto de la bandera */
+  .expansion-bg,
+  .expansion-overlay {
+    display: none;
+  }
+
+  /* Ícono de bandera grande centrado arriba */
+  .expansion-flag-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .expansion-flag-mobile .fi {
+    font-size: 4.5rem;
+    line-height: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .expansion-badge {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #expansion-chile .section-title {
+    text-align: center;
+  }
+
+  .expansion-lead {
+      font-size: 1rem;
+          color: #333;
+  }
+}
