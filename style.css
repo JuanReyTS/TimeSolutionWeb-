@@ -2542,14 +2542,67 @@ footer {
 /* Responsive */
 
 
+/* ===== TABLET (601px – 1024px, cubre iPad portrait y landscape) ===== */
+@media (max-width: 1024px) and (min-width: 601px) {
+  #expansion-chile {
+    padding: 70px 6%;
+  }
 
-/* ===== TABLET (≤900px) ===== */
+  .expansion-content {
+    padding: 0;
+  }
+
+  #expansion-chile .section-title {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+
+  .expansion-lead {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .expansion-footer {
+    font-size: 0.9rem;
+  }
+
+  .expansion-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 32px 0 28px;
+  }
+
+  .expansion-card {
+    padding: 22px 20px;
+  }
+
+  .expansion-card h4 {
+    font-size: 1rem;
+  }
+
+  .expansion-card p {
+    font-size: 0.88rem;
+  }
+
+  /* En este ancho el degradé horizontal queda muy comprimido:
+     lo hacemos más parejo y opaco para que no se vea "cortado" */
+  .expansion-overlay {
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .expansion-bg {
+    opacity: 0.6;
+  }
+}
+
+/* ===== TABLET CHICA / MOBILE GRANDE (≤900px): grid a 1 columna ===== */
 @media (max-width: 900px) {
   .expansion-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 }
+
 
 /* ===== MOBILE (≤600px) ===== */
 @media (max-width: 600px) {
