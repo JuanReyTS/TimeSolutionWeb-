@@ -210,6 +210,78 @@ section { padding: 90px 5%; }
   font-weight: 400;
 }
 
+/* ── MERCADO PAGO ── */
+#mercadopago {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a2a66 0%, #0b4fa8 55%, #00a6e0 100%);
+  padding: 70px 5%;
+}
+/* Brillos difusos de fondo */
+#mercadopago::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(0, 166, 224, 0.45), transparent 40%),
+    radial-gradient(circle at 88% 85%, rgba(255, 255, 255, 0.18), transparent 35%);
+  pointer-events: none;
+}
+/* Trama de puntos sutil */
+#mercadopago::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+#mercadopago .container { position: relative; z-index: 1; }
+.mercadopago-banner {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(255, 255, 255, 0.06);
+}
+.mercadopago-banner img { display: block; width: 100%; height: auto; }
+.mercadopago-cta { margin-top: 1.6rem; text-align: center; }
+.mercadopago-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: #00a6e0; color: #fff;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 166, 224, 0.35);
+  transition: background 0.2s;
+}
+.mercadopago-btn:hover { background: #0b4fa8; }
+
+/* Variante "mp-alt": fondo blanco con franja azul diagonal detrás del banner */
+#mercadopago.mp-alt { background: #fff; padding: 60px 5% 80px; }
+#mercadopago.mp-alt::before {
+  bottom: 30%;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(0, 166, 224, 0.5), transparent 45%),
+    linear-gradient(135deg, #0a2a66 0%, #0b4fa8 55%, #00a6e0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+}
+#mercadopago.mp-alt::after {
+  bottom: 30%;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+}
+#mercadopago.mp-alt .mercadopago-banner {
+  border: none;
+  box-shadow: 0 25px 60px rgba(10, 42, 102, 0.3), 0 0 0 6px #fff;
+}
+
+@media (max-width: 768px) {
+  #mercadopago { padding: 40px 5%; }
+  #mercadopago.mp-alt { padding: 30px 5% 40px; }
+  .mercadopago-cta { margin-top: 1.2rem; }
+  .mercadopago-btn { display: flex; justify-content: center; }
+  .mercadopago-banner { border-radius: 10px; }
+}
+
 /* ── QUIENES ──
 #quienes { background: var(--white); }
 .quienes-grid {
