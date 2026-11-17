@@ -215,7 +215,7 @@ section { padding: 90px 5%; }
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0a2a66 0%, #0b4fa8 55%, #00a6e0 100%);
-  padding: 70px 5%;
+  padding: 90px 5%;
 }
 /* Brillos difusos de fondo */
 #mercadopago::before {
@@ -234,52 +234,86 @@ section { padding: 90px 5%; }
   background-size: 22px 22px;
   pointer-events: none;
 }
-#mercadopago .container { position: relative; z-index: 1; }
-.mercadopago-banner {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(255, 255, 255, 0.06);
+.mp-grid {
+  position: relative; z-index: 1;
+  max-width: 1320px; /* más ancho que el resto del sitio para darle protagonismo a la imagen */
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: center;
 }
-.mercadopago-banner img { display: block; width: 100%; height: auto; }
-.mercadopago-cta { margin-top: 1.6rem; text-align: center; }
+.mp-text { color: #fff; }
+.mp-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.mp-title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.mp-title span { color: #7fd8ff; }
+.mp-lead {
+  font-size: 1rem; line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+.mp-list { list-style: none; padding: 0; margin: 0 0 2rem; }
+.mp-list li {
+  position: relative;
+  padding-left: 1.9rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem; font-weight: 600;
+}
+.mp-list li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 0.05rem;
+  width: 1.3rem; height: 1.3rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #00a6e0;
+  font-size: 0.75rem; font-weight: 900;
+}
+.mp-media img {
+  display: block; width: 100%; height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(255, 255, 255, 0.06);
+}
 .mercadopago-btn {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: #00a6e0; color: #fff;
+  background: #fff; color: #0b4fa8;
   padding: 0.9rem 2.2rem;
   border-radius: 999px;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem; font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0, 166, 224, 0.35);
-  transition: background 0.2s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s, color 0.2s;
 }
-.mercadopago-btn:hover { background: #0b4fa8; }
+.mercadopago-btn:hover { background: #00a6e0; color: #fff; }
 
-/* Variante "mp-alt": fondo blanco con franja azul diagonal detrás del banner */
-#mercadopago.mp-alt { background: #fff; padding: 60px 5% 80px; }
-#mercadopago.mp-alt::before {
-  bottom: 30%;
-  background:
-    radial-gradient(circle at 15% 25%, rgba(0, 166, 224, 0.5), transparent 45%),
-    linear-gradient(135deg, #0a2a66 0%, #0b4fa8 55%, #00a6e0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+@media (max-width: 992px) {
+  .mp-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
-#mercadopago.mp-alt::after {
-  bottom: 30%;
-  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
-}
-#mercadopago.mp-alt .mercadopago-banner {
-  border: none;
-  box-shadow: 0 25px 60px rgba(10, 42, 102, 0.3), 0 0 0 6px #fff;
-}
-
 @media (max-width: 768px) {
-  #mercadopago { padding: 40px 5%; }
-  #mercadopago.mp-alt { padding: 30px 5% 40px; }
-  .mercadopago-cta { margin-top: 1.2rem; }
+  #mercadopago { padding: 50px 5%; }
+  .mp-media img { border-radius: 10px; }
   .mercadopago-btn { display: flex; justify-content: center; }
-  .mercadopago-banner { border-radius: 10px; }
+}
+@media (max-width: 600px) {
+  .mp-title { font-size: 1.55rem; }
+  .mp-lead { font-size: 0.95rem; }
+  /* La imagen ocupa casi todo el ancho de la pantalla */
+  .mp-media { margin: 0 calc(-5vw + 6px); }
+  .mp-media img { box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); }
 }
 
 /* ── QUIENES ──
